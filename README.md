@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Possible Improvements that I could have made?
+
+I would have massively improved the UI. As it stands, it is quite simple and shows the very basic functionality of a Patient Management System.
