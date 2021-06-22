@@ -1,0 +1,31 @@
+  <h4>Patient Details</h4>
+
+  <div class="form-inline my-2 my-lg-0">
+</div>
+<table class="table">
+
+    <thead class="thead-light">
+        <tr>
+            <th>Patient First Name</th>
+            <th>Patient Last Name</th>
+            <th>Phone Number</th>
+            <th>Date Of Birth</th>
+            <th>Blood Type</th>
+            <th>Edit/Delete</th>
+            <th><input type="button" class="btn btn-primary" value="Add Patient" routerLink='/patient-form'> </th>
+        </tr>
+    </thead>
+    <tr *ngFor="let pd of service.list">
+        <td>{{pd.firstName}}</td>
+        <td>{{pd.lastName}}</td>
+        <td>{{pd.phoneNum}}</td>
+        <td>{{pd.dateOfBirth  | date:'dd MMM yyyy'}}</td>
+        <td>{{pd.bloodType}}</td>
+        <td>
+
+            <i class="fas fa-user-edit"  routerLink="/edit-patient-details/{{pd.patientID}}"></i>&nbsp; &nbsp; &nbsp; &nbsp;
+            <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.patientID)"></i>
+
+        </td>
+    </tr>
+</table>

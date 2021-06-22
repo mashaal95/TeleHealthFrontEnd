@@ -1,0 +1,59 @@
+<h4>Patient Form</h4>
+
+<div class="d-flex justify-content-center container" style="margin-top: 5rem;">
+    <div style="width: 80%;">
+        <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+            <div class="form-group">
+                <label>Patient First Name</label>
+                <input class="form-control" placeholder="First Name" name="firstName" #firstName="ngModel"
+                    [(ngModel)]="service.formData.firstName" required
+                    [class.invalid]="firstName.invalid &#038;&#038; firstName.touched">
+            </div>
+
+            <div class="form-group">
+                <label>Patient Last Name</label>
+                <input class="form-control " placeholder="Last Name" name="lastName" #lastName="ngModel"
+                    [(ngModel)]="service.formData.lastName" required
+                    [class.invalid]="lastName.invalid &#038;&#038; lastName.touched">
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input class="form-control " placeholder="04666666641" name="phoneNum"
+                    #phoneNum="ngModel" [(ngModel)]="service.formData.phoneNum" required maxlength="10" minlength="10"
+                    [class.invalid]="phoneNum.invalid &#038;&#038; phoneNum.touched">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Date of Birth</label>
+                    <input type="date" class="form-control " placeholder="DD/MM/YYYY" name="dateOfBirth"
+                        #dateOfBirth="ngModel" [(ngModel)]="service.formData.dateOfBirth"
+                        [class.invalid]="dateOfBirth.invalid &#038;&#038; dateOfBirth.touched">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Blood Type</label>
+                          <select class="form-control" name="bloodType" #bloodType="ngModel"
+                          [(ngModel)]="service.formData.bloodType" required>
+                            <option disableOptionCentering value="A+">A+</option>
+                            <option disableOptionCentering value="A-">A-</option>
+                            <option disableOptionCentering value="B+">B+</option>
+                            <option disableOptionCentering value="B-">B-</option>
+                            <option disableOptionCentering value="O+">O+</option>
+                            <option disableOptionCentering value="O-">O-</option>
+                            <option disableOptionCentering value="AB+">AB+</option>
+                            <option disableOptionCentering value="AB-">AB-</option>
+
+                          </select>
+                        <!-- </mat-form-field> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info btn-lg btn-block" type="submit"
+                    (click)="openSnackBar('The Patient has been added!', 'Close','Green')"
+                    [disabled]="form.invalid">SUBMIT</button>
+            </div>
+
+        </form>
+    </div>
+</div>
